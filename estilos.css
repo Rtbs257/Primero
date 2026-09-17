@@ -1,0 +1,186 @@
+/* ==========================================================================
+   1. REGULACIÓN BASE Y REINICIO BÁSICO (SIN RESETS EXTERNOS)
+   ========================================================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    color: #2b2b2b;
+    background-color: #f4f6f9;
+}
+
+/* Regla estricta para multimedia responsive fluida */
+img, iframe {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   2. ESTRATEGIA FLUIDA Y ESTRUCTURA DE CONTENEDORES (SIN FLEX/GRID)
+   ========================================================================== */
+.contenedor {
+    width: 90%;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+/* Hack Clearfix para flotantes sin alterar el flujo normal */
+.clearfix::after {
+    content: "";
+    clear: both;
+    display: table;
+}
+
+/* ==========================================================================
+   3. ENCABEZADO Y NAVEGACIÓN (FLOAT & INLINE-BLOCK)
+   ========================================================================== */
+.header-principal {
+    background-color: #1a252f;
+    color: #ffffff;
+    padding: 20px 0;
+    border-bottom: 4px solid #3498db;
+}
+
+.logo {
+    float: left;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.nav-principal {
+    float: right;
+}
+
+.nav-principal ul {
+    list-style: none;
+}
+
+.nav-principal li {
+    display: inline-block;
+    margin-left: 15px;
+}
+
+.nav-principal a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 5px 8px;
+}
+
+.nav-principal a:hover {
+    color: #3498db;
+}
+
+/* ==========================================================================
+   4. SECCIONES Y CONTENIDO (DISEÑO FLUIDO EN PORCENTAJES)
+   ========================================================================== */
+.seccion-bloque {
+    background-color: #ffffff;
+    margin: 25px 0;
+    padding: 25px;
+    border-radius: 6px;
+    border-left: 5px solid #3498db;
+}
+
+h2 {
+    color: #1a252f;
+    margin-bottom: 15px;
+    font-size: 1.4rem;
+}
+
+p {
+    margin-bottom: 10px;
+}
+
+/* Layout de dos columnas fluido (Sección Hero) */
+.seccion-hero {
+    background-color: #ffffff;
+    margin: 25px 0;
+    padding: 25px;
+    border-radius: 6px;
+}
+
+.columna-texto {
+    width: 58%;
+    float: left;
+    margin-right: 4%;
+}
+
+.columna-imagen {
+    width: 38%;
+    float: left;
+}
+
+figcaption {
+    font-size: 0.85rem;
+    color: #666666;
+    text-align: center;
+    margin-top: 5px;
+}
+
+/* Disposición de 3 Columnas Fluidas con Inline-block */
+.tarjetas-contenedor,
+.galeria-contenedor {
+    font-size: 0; /* Elimina espacio blanco de elementos inline-block */
+    margin: 0 -1%;
+}
+
+.tarjeta-tercio {
+    display: inline-block;
+    vertical-align: top;
+    width: 31.33%;
+    margin: 1%;
+    font-size: 1rem; /* Restablece el tamaño de fuente */
+    background-color: #f8f9fa;
+    padding: 15px;
+    border: 1px solid #e2e8f0;
+    border-radius: 4px;
+}
+
+.tarjeta-tercio img {
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+/* Cita destacada */
+blockquote {
+    background-color: #ebf5fb;
+    border-left: 4px solid #3498db;
+    padding: 15px 20px;
+    font-style: italic;
+    color: #2c3e50;
+}
+
+/* Contenedor fluido proporcional para iframe de video (16:9) */
+.contenedor-video {
+    position: relative;
+    padding-bottom: 56.25%; /* Relación de aspecto 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.contenedor-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* ==========================================================================
+   5. PIE DE PÁGINA
+   ========================================================================== */
+.footer-principal {
+    background-color: #1a252f;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
